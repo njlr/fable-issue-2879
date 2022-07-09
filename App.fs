@@ -17,13 +17,13 @@ module Api =
   let tryFetchData (fetchID : Guid) : Async<Result<Guid, Exception>> =
     async {
       for i = 1 to 5 do
-        printfn $"[{fetchID}]... {i}"
+        printfn $"[{fetchID}] Fetching... {i}"
 
         do! Async.Sleep (TimeSpan.FromSeconds 1)
 
       let data = Guid.NewGuid()
 
-      printfn $"[{fetchID}]... Done"
+      printfn $"[{fetchID}] Done."
 
       return Ok data
     }
