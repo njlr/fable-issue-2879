@@ -14,7 +14,7 @@ type RemoteData<'t, 'e> =
 
 module Api =
 
-  let tryFetchData (fetchID) : Async<Result<Guid, Exception>> =
+  let tryFetchData (fetchID : Guid) : Async<Result<Guid, Exception>> =
     async {
       for i = 1 to 5 do
         printfn $"[{fetchID}]... {i}"
